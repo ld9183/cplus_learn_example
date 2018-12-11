@@ -6,7 +6,7 @@ OPTFLAG:= -O2
 AR:= ar
 ARFLAGS:= rcs
 
-all: test_vector_erase test_block_read test_endian
+all: test_vector_erase test_block_read test_endian test_unix_time
 
 test_vector_erase: test_vector_erase.cc
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
@@ -14,6 +14,8 @@ test_block_read: test_block_read.cc
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
 test_endian: test_endian.cc
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
+test_unix_time: test_unix_time.cc
+	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
 
 clean:
-	rm -rf test_vector_erase test_block_read test_endian
+	rm -rf test_vector_erase test_block_read test_endian test_unix_time

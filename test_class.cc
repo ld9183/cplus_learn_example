@@ -51,7 +51,7 @@ class person_t {
 class worker_t: public person_t {
     public:
         worker_t():person_t(),_wage(0), _level(0) {}
-        worker_t(const std::string &name):person_t(name),_wage(0), _level(0) {}
+        explicit worker_t(const std::string &name):person_t(name),_wage(0), _level(0) {}
 
         virtual ~worker_t() {
             std::cout << "destructor worker_t" << std::endl;

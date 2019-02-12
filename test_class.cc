@@ -26,6 +26,7 @@ class person_t {
         explicit person_t(const std::string& wname):_id(count++),_name(wname) {}
         person_t& operator=(const person_t& other_worker) {
             _name = other_worker._name;
+            return *this;
         }
         virtual ~person_t() {
             std::cout << "destructor person_t:" << _name << std::endl;

@@ -6,20 +6,10 @@ OPTFLAG:= -O2
 AR:= ar
 ARFLAGS:= rcs
 
-all: test_vector_erase test_block_read test_endian test_unix_time test_class test_quick_sort
+all: test_vector_erase test_block_read test_endian test_unix_time test_class test_quick_sort test_list
 
-test_vector_erase: test_vector_erase.cc
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
-test_block_read: test_block_read.cc
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
-test_endian: test_endian.cc
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
-test_unix_time: test_unix_time.cc
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
-test_class: test_class.cc
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
-test_quick_sort: test_quick_sort.cc
+% : %.cc
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
 
 clean:
-	rm -rf test_vector_erase test_block_read test_endian test_unix_time test_class
+	rm -rf test_vector_erase test_block_read test_endian test_unix_time test_class test_list

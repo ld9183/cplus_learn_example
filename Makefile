@@ -6,10 +6,10 @@ OPTFLAG:= -O2
 AR:= ar
 ARFLAGS:= rcs
 
-all: test_vector_erase test_block_read test_endian test_unix_time test_class test_quick_sort test_list
+all: test_vector_erase test_block_read test_endian test_unix_time test_class test_quick_sort test_list test_bitree
 
 % : %.cc
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)  $(DEBUGFLAGS)
 
 clean:
-	rm -rf test_vector_erase test_block_read test_endian test_unix_time test_class test_list
+	rm -rf test_vector_erase test_block_read test_endian test_unix_time test_class test_list test_bitree
